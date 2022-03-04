@@ -7,7 +7,7 @@
 
 #running server
 
-***bash 
+```bash 
   python app.py
-***
+```
 
