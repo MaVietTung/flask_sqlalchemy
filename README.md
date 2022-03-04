@@ -2,7 +2,6 @@
 
 ## Python verson 3.10.2
 
-## Operating System: Windows 10
 
 ## Set Up library
 
