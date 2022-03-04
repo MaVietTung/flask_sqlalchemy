@@ -1,8 +1,8 @@
 #set up environment
 
-***bash
+```bash
   pip install flask, flask_marshmallow, flask_sqlalchemy
-***
+```
 
 
 #running server
