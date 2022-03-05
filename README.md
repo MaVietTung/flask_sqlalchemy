@@ -20,3 +20,5 @@ Using command in terminal
 ```bash 
   python app.py
 ```
+
+Allright reserved about this application belong to Ma Viet Tung
