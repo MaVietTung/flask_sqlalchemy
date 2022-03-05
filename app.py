@@ -9,6 +9,7 @@ from routes.GetListProductRoute import routeListProduct
 from routes.GetProductByIdRoute import getProductByIDRoute
 from routes.UpdateProductRoute import updateProductRoute
 from routes.GetListUserRoute import getListUserRoute
+from routes.DeleteProductRoute import deleteProductRoute
 
 #init app
 app = Flask(__name__)
@@ -29,6 +30,7 @@ app.register_blueprint(routeListProduct)
 app.register_blueprint(getProductByIDRoute)
 app.register_blueprint(updateProductRoute)
 app.register_blueprint(getListUserRoute)
+app.register_blueprint(deleteProductRoute)
 #run server
 if __name__ == '__main__':
     app.run(debug = True)
