@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from extension import db
-from model.UserModel import User
+from models.UserModel import User
 from schema.UserSchema import user_schema
 
 addUserRoute = Blueprint("addUserRoute",__name__)

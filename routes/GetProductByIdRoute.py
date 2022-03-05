@@ -1,6 +1,6 @@
 from flask import Blueprint
 from schema.ProductSchema import product_schema
-from model.ProductModel import Product
+from models.ProductModel import Product
 
 getProductByIDRoute = Blueprint("getProductByIDRoute",__name__)
 

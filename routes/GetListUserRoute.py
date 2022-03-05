@@ -1,6 +1,6 @@
 from unittest import result
 from flask import Blueprint, jsonify
-from model.UserModel import User
+from models.UserModel import User
 from schema.UserSchema import users_schema
 
 getListUserRoute = Blueprint('getListUserRoute',__name__)

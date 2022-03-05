@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 
-from model.ProductModel import Product
+from models.ProductModel import Product
 from schema.ProductSchema import products_schema
 
 routeListProduct = Blueprint("routeListProduct",__name__)

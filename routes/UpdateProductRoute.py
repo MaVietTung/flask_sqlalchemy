@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from extension import db
-from model.ProductModel import Product
-from model.UserModel import User
+from models.ProductModel import Product
+from models.UserModel import User
 from schema.ProductSchema import product_schema
 
 updateProductRoute = Blueprint("updateProductRoute",__name__)

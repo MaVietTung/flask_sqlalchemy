@@ -1,6 +1,6 @@
 from flask import Blueprint, request
-from model.UserModel import User
-from model.ProductModel import Product
+from models.UserModel import User
+from models.ProductModel import Product
 from extension import db
 from schema.ProductSchema import product_schema
 

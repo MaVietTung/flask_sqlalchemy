@@ -2,13 +2,13 @@
 from flask import Flask
 from extension import db,ma
 from config import *
-from route.AddProductRoute import routeAddProduct
-from route.AddUserRoute import addUserRoute
-from route.DefaultRoute import defaultRoute
-from route.GetListProductRoute import routeListProduct
-from route.GetProductByIdRoute import getProductByIDRoute
-from route.UpdateProductRoute import updateProductRoute
-from route.GetListUserRoute import getListUserRoute
+from routes.AddProductRoute import routeAddProduct
+from routes.AddUserRoute import addUserRoute
+from routes.DefaultRoute import defaultRoute
+from routes.GetListProductRoute import routeListProduct
+from routes.GetProductByIdRoute import getProductByIDRoute
+from routes.UpdateProductRoute import updateProductRoute
+from routes.GetListUserRoute import getListUserRoute
 
 #init app
 app = Flask(__name__)
