@@ -8,7 +8,7 @@
 ```bash
   pip install flask, flask_marshmallow, flask_sqlalchemy
 ```
-For more information about flask, flask_marshmallow, flask_sqlalchemy check: https://flask.palletsprojects.com/en/2.0.x/
+For more information about flask, flask_marshmallow, flask_sqlalchemy check: https://flask.palletsprojects.com/en/2.0.x/, https://flask-sqlalchemy.palletsprojects.com/en/2.x/, https://flask-marshmallow.readthedocs.io/en/latest/
 ## Set Up database
 
 Using MySQL Database on localhost:3306 , for more infomation check: https://www.mysql.com/
