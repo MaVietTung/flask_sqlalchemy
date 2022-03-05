@@ -22,7 +22,7 @@ ma.init_app(app)
 with app.app_context():
     #db.drop_all()
     db.create_all()
-#set route
+#register route from Bluprint instance we set in routes package
 app.register_blueprint(routeAddProduct)
 app.register_blueprint(addUserRoute)
 app.register_blueprint(defaultRoute)

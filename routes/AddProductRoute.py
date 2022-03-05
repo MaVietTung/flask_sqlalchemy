@@ -4,6 +4,9 @@ from models.ProductModel import Product
 from extension import db
 from schema.ProductSchema import product_schema
 
+"""Represents a blueprint, a collection of routes and other
+    app-related functions that can be registered on a real application
+    later."""
 routeAddProduct = Blueprint("routeAddProduct",__name__)
 
 @routeAddProduct.route('/product',methods=['POST'])
