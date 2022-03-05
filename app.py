@@ -19,6 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
 #init db and ma
 db.init_app(app)
 ma.init_app(app)
+#run create table if they are not exits first time when running app
 with app.app_context():
     #db.drop_all()
     db.create_all()
