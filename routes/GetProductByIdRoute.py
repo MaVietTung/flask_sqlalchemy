@@ -10,4 +10,8 @@ getProductByIDRoute = Blueprint("getProductByIDRoute",__name__)
 @getProductByIDRoute.route('/product/<id>',methods=['GET'])
 def fun_get_by_id(id):
     product = Product.query.get(id)
-    return product_schema.jsonify(product)
+    response = product_schema.jsonify(product)
+    response.status_code = 200
+    response.content_type = "aplication/json"
+    response.headers['Custom-header'] = "Custom-header"
+    return response

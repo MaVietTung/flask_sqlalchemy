@@ -1,3 +1,4 @@
+from urllib import response
 from flask import Blueprint, request
 from models.UserModel import User
 from models.ProductModel import Product
@@ -17,4 +18,8 @@ def fun_add_product():
     new_product = Product(name = name,price = price,owner = User.query.get(owner))
     db.session.add(new_product)
     db.session.commit()
-    return product_schema.jsonify(new_product)
+    response = product_schema.jsonify(new_product)
+    response.status_code = 200
+    response.content_type = "aplication/json"
+    response.headers['Custom-header'] = "Custom-header"
+    return response

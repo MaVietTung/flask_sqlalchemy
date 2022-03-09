@@ -1,3 +1,4 @@
+from urllib import response
 from flask import Blueprint, jsonify
 from schema.ProductSchema import product_schema
 
@@ -8,4 +9,8 @@ defaultRoute = Blueprint("defaultRoute",__name__)
     later."""
 @defaultRoute.route('/',methods=['GET'])
 def fun_default():
-    return jsonify({'msg':'Hello Newebie'})
+    response = jsonify({'msg':'Hello Newebie'})
+    response.status_code = 200
+    response.content_type = "aplication/json"
+    response.headers['Custom-header'] = "Custom-header"
+    return response

@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, make_response, render_template
 
 from models.ProductModel import Product
 from schema.ProductSchema import products_schema
@@ -12,4 +12,8 @@ routeListProduct = Blueprint("routeListProduct",__name__)
 def fun_get_list_product():
     all_products = Product.query.all()
     result = products_schema.dump(all_products)
-    return jsonify(result)
+    response = jsonify(result)
+    response.status_code = 200
+    response.content_type = "aplication/json"
+    response.headers['Custom-header'] = "Custom-header"
+    return response

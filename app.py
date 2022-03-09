@@ -13,6 +13,7 @@ from routes.DeleteProductRoute import deleteProductRoute
 
 #init app
 app = Flask(__name__)
+app.make_response
 #set app config
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS

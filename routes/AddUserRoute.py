@@ -14,4 +14,8 @@ def fun_add_user():
     user = User(name=name)
     db.session.add(user)
     db.session.commit()
-    return user_schema.jsonify(user)
+    response = user_schema.jsonify(user)
+    response.status_code = 200
+    response.content_type = "aplication/json"
+    response.headers['Custom-header'] = "Custom-header"
+    return response

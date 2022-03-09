@@ -1,3 +1,4 @@
+from urllib import response
 from flask import Blueprint, request
 from extension import db
 from models.ProductModel import Product
@@ -14,4 +15,8 @@ def fun_delete(id):
     product = Product.query.get(id)
     db.session.delete(product)
     db.session.commit()
-    return product_schema.jsonify(product)
+    response = product_schema.jsonify(product)
+    response.status_code = 200
+    response.content_type = "aplication/json"
+    response.headers['Custom-header'] = "Custom-header"
+    return response
