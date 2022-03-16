@@ -9,9 +9,9 @@ from schema.OrderSchema import orders_schema
 """Represents a blueprint, a collection of routes and other
     app-related functions that can be registered on a real application
     later."""
-getListOderByOrderIdRoute = Blueprint('getListOderByOrderIdRoute',__name__)
+getListProductByOrderIdRoute = Blueprint('getListProductByOrderIdRoute',__name__)
 
-@getListOderByOrderIdRoute.route('/getListOderByOrderIdRoute/<id>',methods=['GET'])
+@getListProductByOrderIdRoute.route('/getListOderByOrderIdRoute/<id>',methods=['GET'])
 def fun_get_order_list(id):
     result = OrderProduct.query.filter_by(order_id = id).all()
     result = products_schema.dump(i.product for i in result)

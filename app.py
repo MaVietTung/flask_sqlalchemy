@@ -12,7 +12,7 @@ from routes.GetProductByIdRoute import getProductByIDRoute
 from routes.UpdateProductRoute import updateProductRoute
 from routes.GetListUserRoute import getListUserRoute
 from routes.DeleteProductRoute import deleteProductRoute
-from routes.GetListProductByOrderId import getListOderByOrderIdRoute
+from routes.GetListProductByOrderId import getListProductByOrderIdRoute
 #init app
 app = Flask(__name__)
 app.make_response
@@ -36,7 +36,7 @@ app.register_blueprint(getListUserRoute)
 app.register_blueprint(deleteProductRoute)
 app.register_blueprint(addOrderRoute)
 app.register_blueprint(getListOderRoute)
-app.register_blueprint(getListOderByOrderIdRoute)
+app.register_blueprint(getListProductByOrderIdRoute)
 #run server
 if __name__ == '__main__':
     app.run(debug = True)
