@@ -3,6 +3,7 @@ from flask import Blueprint, request
 from extension import db
 from models.ProductModel import Product
 from models.UserModel import User
+from response import make_response
 from schema.ProductSchema import product_schema
 
 """Represents a blueprint, a collection of routes and other
@@ -15,8 +16,5 @@ def fun_delete(id):
     product = Product.query.get(id)
     db.session.delete(product)
     db.session.commit()
-    response = product_schema.jsonify(product)
-    response.status_code = 200
-    response.content_type = "aplication/json"
-    response.headers['Custom-header'] = "Custom-header"
+    response = make_response(product_schema.dump(product))
     return response

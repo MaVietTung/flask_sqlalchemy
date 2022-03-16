@@ -1,4 +1,5 @@
 from flask import Blueprint
+from response import make_response
 from schema.ProductSchema import product_schema
 from models.ProductModel import Product
 
@@ -10,8 +11,5 @@ getProductByIDRoute = Blueprint("getProductByIDRoute",__name__)
 @getProductByIDRoute.route('/product/<id>',methods=['GET'])
 def fun_get_by_id(id):
     product = Product.query.get(id)
-    response = product_schema.jsonify(product)
-    response.status_code = 200
-    response.content_type = "aplication/json"
-    response.headers['Custom-header'] = "Custom-header"
+    response = make_response(header =  {"status code" : 200},data=product_schema.dump(product))
     return response

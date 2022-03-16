@@ -1,5 +1,5 @@
-from flask import Blueprint, jsonify, make_response, render_template
-
+from flask import Blueprint, jsonify, render_template
+from response import make_response
 from models.ProductModel import Product
 from schema.ProductSchema import products_schema
 
@@ -12,8 +12,5 @@ routeListProduct = Blueprint("routeListProduct",__name__)
 def fun_get_list_product():
     all_products = Product.query.all()
     result = products_schema.dump(all_products)
-    response = jsonify(result)
-    response.status_code = 200
-    response.content_type = "aplication/json"
-    response.headers['Custom-header'] = "Custom-header"
+    response = make_response(header={"status code":200,"error code":0},data = result)
     return response

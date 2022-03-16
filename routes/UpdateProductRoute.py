@@ -1,8 +1,12 @@
+import email
+from math import prod
+import re
 from urllib import response
 from flask import Blueprint, request
 from extension import db
 from models.ProductModel import Product
 from models.UserModel import User
+from response import make_response
 from schema.ProductSchema import product_schema
 
 """Represents a blueprint, a collection of routes and other
@@ -16,15 +20,21 @@ def fun_update(id):
     if("name" in request.json):
         name = request.json['name']
         product.name = name
-    if("price" in request.json):
-        price = request.json['price']
-        product.price = price
+    if("state" in request.json):
+        state = request.json['state']
+        product.state = state
+    if("age" in request.json):
+        age = request.json['age']
+        product.age = age
+    if("email" in request.json):
+        email = request.json['email']
+        product.email = email
+    if("type" in request.json):
+        type = request.json['type']
+        product.type = type
     if("owner_id" in request.json):
         owner = request.json['owner_id']
         product.owner = User.query.get(owner)
     db.session.commit()
-    response = product_schema.jsonify(product)
-    response.status_code = 200
-    response.content_type = "aplication/json"
-    response.headers['Custom-header'] = "Custom-header"
+    response =  make_response(product_schema.dump(product))
     return response
